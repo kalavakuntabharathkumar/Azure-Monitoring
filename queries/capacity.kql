@@ -1,0 +1,7 @@
+// App Service CPU and memory pressure over a 15-minute window.
+AzureMetrics
+| where ResourceProvider == "MICROSOFT.WEB"
+| where MetricName in ("CpuPercentage", "MemoryPercentage")
+| summarize AvgValue = avg(Average), PeakValue = max(Maximum)
+    by MetricName, bin(TimeGenerated, 5m), Resource
+| order by TimeGenerated desc

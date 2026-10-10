@@ -1,0 +1,6 @@
+// Availability trend for the App Service resource.
+AzureMetrics
+| where ResourceProvider == "MICROSOFT.WEB"
+| where MetricName == "Http5xx"
+| summarize ServerErrors = sum(Total) by bin(TimeGenerated, 5m), Resource
+| order by TimeGenerated desc

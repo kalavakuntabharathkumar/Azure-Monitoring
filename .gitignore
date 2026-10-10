@@ -1,0 +1,9 @@
+.env
+*.publishsettings
+*.publish.xml
+*.pfx
+*.key
+*.pem
+local.settings.json
+bin/
+obj/
