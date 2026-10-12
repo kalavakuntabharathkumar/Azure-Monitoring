@@ -14,3 +14,7 @@
 5. Repeat at least three times across distinct recovery points before accepting the operational procedure.
 
 Keep restore credentials and storage keys out of scripts and logs. Follow the organization's approval process before production restores.
+
+## Evidence log template
+
+For each restore test, record: test ID, source share, recovery point, restore target, operator, start/end timestamps, file count, checksum result, and cleanup approval. The project brief cites three successful checksum comparisons; retain the actual test output as evidence rather than relying on this template.
